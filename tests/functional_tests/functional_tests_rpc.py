@@ -34,27 +34,27 @@ try:
 except:
   tests = DEFAULT_TESTS
 
-# a main offline monerod, does most of the tests
-# a restricted RPC monerod setup with RPC payment
-# two local online monerods connected to each other
+# a main offline lozzaxd, does most of the tests
+# a restricted RPC lozzaxd setup with RPC payment
+# two local online lozzaxds connected to each other
 N_MONERODS = 4
 
-# 4 wallets connected to the main offline monerod
-# a wallet connected to the first local online monerod
+# 4 wallets connected to the main offline lozzaxd
+# a wallet connected to the first local online lozzaxd
 N_WALLETS = 5
 
 WALLET_DIRECTORY = builddir + "/functional-tests-directory"
 FUNCTIONAL_TESTS_DIRECTORY = builddir + "/tests/functional_tests"
 DIFFICULTY = 10
 
-monerod_base = [builddir + "/bin/monerod", "--regtest", "--fixed-difficulty", str(DIFFICULTY), "--no-igd", "--p2p-bind-port", "monerod_p2p_port", "--rpc-bind-port", "monerod_rpc_port", "--zmq-rpc-bind-port", "monerod_zmq_port", "--non-interactive", "--disable-dns-checkpoints", "--check-updates", "disabled", "--rpc-ssl", "disabled", "--data-dir", "monerod_data_dir", "--log-level", "1"]
-monerod_extra = [
+lozzaxd_base = [builddir + "/bin/lozzaxd", "--regtest", "--fixed-difficulty", str(DIFFICULTY), "--no-igd", "--p2p-bind-port", "lozzaxd_p2p_port", "--rpc-bind-port", "lozzaxd_rpc_port", "--zmq-rpc-bind-port", "lozzaxd_zmq_port", "--non-interactive", "--disable-dns-checkpoints", "--check-updates", "disabled", "--rpc-ssl", "disabled", "--data-dir", "lozzaxd_data_dir", "--log-level", "1"]
+lozzaxd_extra = [
   ["--offline"],
   ["--rpc-payment-address", "44SKxxLQw929wRF6BA9paQ1EWFshNnKhXM3qz6Mo3JGDE2YG3xyzVutMStEicxbQGRfrYvAAYxH6Fe8rnD56EaNwUiqhcwR", "--rpc-payment-difficulty", str(DIFFICULTY), "--rpc-payment-credits", "5000", "--offline"],
   ["--add-exclusive-node", "127.0.0.1:18283"],
   ["--add-exclusive-node", "127.0.0.1:18282"],
 ]
-wallet_base = [builddir + "/bin/monero-wallet-rpc", "--wallet-dir", WALLET_DIRECTORY, "--rpc-bind-port", "wallet_port", "--disable-rpc-login", "--rpc-ssl", "disabled", "--daemon-ssl", "disabled", "--log-level", "1"]
+wallet_base = [builddir + "/bin/lozzax-wallet-rpc", "--wallet-dir", WALLET_DIRECTORY, "--rpc-bind-port", "wallet_port", "--disable-rpc-login", "--rpc-ssl", "disabled", "--daemon-ssl", "disabled", "--log-level", "1"]
 wallet_extra = [
   ["--daemon-port", "18180"],
   ["--daemon-port", "18180"],
@@ -69,10 +69,10 @@ outputs = []
 ports = []
 
 for i in range(N_MONERODS):
-  command_lines.append([str(18180+i) if x == "monerod_rpc_port" else str(18280+i) if x == "monerod_p2p_port" else str(18380+i) if x == "monerod_zmq_port" else builddir + "/functional-tests-directory/monerod" + str(i) if x == "monerod_data_dir" else x for x in monerod_base])
-  if i < len(monerod_extra):
-    command_lines[-1] += monerod_extra[i]
-  outputs.append(open(FUNCTIONAL_TESTS_DIRECTORY + '/monerod' + str(i) + '.log', 'a+'))
+  command_lines.append([str(18180+i) if x == "lozzaxd_rpc_port" else str(18280+i) if x == "lozzaxd_p2p_port" else str(18380+i) if x == "lozzaxd_zmq_port" else builddir + "/functional-tests-directory/lozzaxd" + str(i) if x == "lozzaxd_data_dir" else x for x in lozzaxd_base])
+  if i < len(lozzaxd_extra):
+    command_lines[-1] += lozzaxd_extra[i]
+  outputs.append(open(FUNCTIONAL_TESTS_DIRECTORY + '/lozzaxd' + str(i) + '.log', 'a+'))
   ports.append(18180+i)
 
 for i in range(N_WALLETS):

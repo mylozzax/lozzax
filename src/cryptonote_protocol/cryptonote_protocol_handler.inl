@@ -1341,7 +1341,7 @@ namespace cryptonote
     cryptonote::network_type nettype = m_core.get_nettype();
 
     // Don't simply use remaining number of blocks for the estimate but "sync weight" as provided by
-    // "cumulative_block_sync_weight" which knows about strongly varying Monero mainnet block sizes
+    // "cumulative_block_sync_weight" which knows about strongly varying Lozzax mainnet block sizes
     uint64_t synced_weight = tools::cumulative_block_sync_weight(nettype, m_sync_start_height, current_blockchain_height - m_sync_start_height);
     float us_per_weight = (float)sync_time.total_microseconds() / (float)synced_weight;
     uint64_t remaining_weight = tools::cumulative_block_sync_weight(nettype, current_blockchain_height, target_blockchain_height - current_blockchain_height);
@@ -2459,7 +2459,7 @@ skip:
         }
       }
       MGINFO_YELLOW(ENDL << "**********************************************************************" << ENDL
-        << "You are now synchronized with the network. You may now start monero-wallet-cli." << ENDL
+        << "You are now synchronized with the network. You may now start lozzax-wallet-cli." << ENDL
         << ENDL
         << "Use the \"help\" command to see the list of available commands." << ENDL
         << "**********************************************************************");
@@ -2909,7 +2909,7 @@ skip:
       m_core.set_target_blockchain_height(target);
       if (target == 0 && context.m_state > cryptonote_connection_context::state_before_handshake && !m_stopping)
       {
-        MCWARNING("global", "monerod is now disconnected from the network");
+        MCWARNING("global", "lozzaxd is now disconnected from the network");
         m_ask_for_txpool_complement = true;
       }
     }

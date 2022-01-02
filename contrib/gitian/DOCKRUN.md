@@ -43,10 +43,10 @@ export GH_USER=<github account name>
 ```
 
 * PGP keys - if you don't have one already, you can use `gpg --quick-gen-key` to generate it.
-* a fork of the [gitian.sigs](https://github.com/monero-project/gitian.sigs/) repo on your GitHub account.
+* a fork of the [gitian.sigs](https://github.com/lozzax-project/gitian.sigs/) repo on your GitHub account.
 Please follow the directions there for uploading your key first.
 
-**Note:** Please ensure your gpg public key is available to check signatures by adding it to the [gitian.sigs/gitian-pubkeys/](https://github.com/monero-project/gitian.sigs/tree/master/gitian-pubkeys) directory in a pull request.
+**Note:** Please ensure your gpg public key is available to check signatures by adding it to the [gitian.sigs/gitian-pubkeys/](https://github.com/lozzax-project/gitian.sigs/tree/master/gitian-pubkeys) directory in a pull request.
 
 
 Building the Binaries
@@ -63,7 +63,7 @@ The build should run to completion with no errors, and will display the SHA256 c
 of the resulting binaries. You'll be prompted to check if the sums look good, and if so
 then the results will be signed, and the signatures will be pushed to GitHub.
 
-You can also look in the [gitian.sigs](https://github.com/monero-project/gitian.sigs/) repo and / or [getmonero.org release checksums](https://web.getmonero.org/downloads/hashes.txt) to see if others got the same checksum for the same version tag.  If there is ever a mismatch -- **STOP! Something is wrong**.  Contact others on IRC / GitHub to figure out what is going on.
+You can also look in the [gitian.sigs](https://github.com/lozzax-project/gitian.sigs/) repo and / or [lozzax.xyz release checksums](https://web.lozzax.xyz/downloads/hashes.txt) to see if others got the same checksum for the same version tag.  If there is ever a mismatch -- **STOP! Something is wrong**.  Contact others on IRC / GitHub to figure out what is going on.
 
 
 Other Options

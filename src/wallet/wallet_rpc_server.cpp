@@ -69,7 +69,7 @@ namespace
   const command_line::arg_descriptor<std::string> arg_wallet_dir = {"wallet-dir", "Directory for newly created wallets"};
   const command_line::arg_descriptor<bool> arg_prompt_for_password = {"prompt-for-password", "Prompts for password when not provided", false};
 
-  constexpr const char default_rpc_username[] = "monero";
+  constexpr const char default_rpc_username[] = "lozzax";
 
   boost::optional<tools::password_container> password_prompter(const char *prompt, bool verify)
   {
@@ -226,7 +226,7 @@ namespace tools
           string_encoding::base64_encode(rand_128bit.data(), rand_128bit.size())
         );
 
-        std::string temp = "monero-wallet-rpc." + bind_port + ".login";
+        std::string temp = "lozzax-wallet-rpc." + bind_port + ".login";
         rpc_login_file = tools::private_file::create(temp);
         if (!rpc_login_file.handle())
         {
@@ -277,7 +277,7 @@ namespace tools
     tools::wallet2::BackgroundMiningSetupType setup = m_wallet->setup_background_mining();
     if (setup == tools::wallet2::BackgroundMiningNo)
     {
-      MLOG_RED(el::Level::Warning, "Background mining not enabled. Run \"set setup-background-mining 1\" in monero-wallet-cli to change.");
+      MLOG_RED(el::Level::Warning, "Background mining not enabled. Run \"set setup-background-mining 1\" in lozzax-wallet-cli to change.");
       return;
     }
 
@@ -302,8 +302,8 @@ namespace tools
     {
       MINFO("The daemon is not set up to background mine.");
       MINFO("With background mining enabled, the daemon will mine when idle and not on battery.");
-      MINFO("Enabling this supports the network you are using, and makes you eligible for receiving new monero");
-      MINFO("Set setup-background-mining to 1 in monero-wallet-cli to change.");
+      MINFO("Enabling this supports the network you are using, and makes you eligible for receiving new lozzax");
+      MINFO("Set setup-background-mining to 1 in lozzax-wallet-cli to change.");
       return;
     }
 
@@ -865,7 +865,7 @@ namespace tools
           }
           if (addresses.empty())
           {
-            er.message = std::string("No Monero address found at ") + url;
+            er.message = std::string("No Lozzax address found at ") + url;
             return {};
           }
           return addresses[0];
@@ -2161,7 +2161,7 @@ namespace tools
         }
         if (addresses.empty())
         {
-          er.message = std::string("No Monero address found at ") + url;
+          er.message = std::string("No Lozzax address found at ") + url;
           return {};
         }
         return addresses[0];
@@ -2979,7 +2979,7 @@ namespace tools
         }
         if (addresses.empty())
         {
-          er.message = std::string("No Monero address found at ") + url;
+          er.message = std::string("No Lozzax address found at ") + url;
           return {};
         }
         return addresses[0];
@@ -3033,7 +3033,7 @@ namespace tools
           }
           if (addresses.empty())
           {
-            er.message = std::string("No Monero address found at ") + url;
+            er.message = std::string("No Lozzax address found at ") + url;
             return {};
           }
           return addresses[0];
@@ -4352,7 +4352,7 @@ namespace tools
             }
             if (addresses.empty())
             {
-              er.message = std::string("No Monero address found at ") + url;
+              er.message = std::string("No Lozzax address found at ") + url;
               return {};
             }
             address = addresses[0];
@@ -4721,12 +4721,12 @@ int main(int argc, char** argv) {
   bool should_terminate = false;
   std::tie(vm, should_terminate) = wallet_args::main(
     argc, argv,
-    "monero-wallet-rpc [--wallet-file=<file>|--generate-from-json=<file>|--wallet-dir=<directory>] [--rpc-bind-port=<port>]",
-    tools::wallet_rpc_server::tr("This is the RPC monero wallet. It needs to connect to a monero\ndaemon to work correctly."),
+    "lozzax-wallet-rpc [--wallet-file=<file>|--generate-from-json=<file>|--wallet-dir=<directory>] [--rpc-bind-port=<port>]",
+    tools::wallet_rpc_server::tr("This is the RPC Lozzax wallet. It needs to connect to a lozzax\ndaemon to work correctly."),
     desc_params,
     po::positional_options_description(),
     [](const std::string &s, bool emphasis){ tools::scoped_message_writer(emphasis ? epee::console_color_white : epee::console_color_default, true) << s; },
-    "monero-wallet-rpc.log",
+    "lozzax-wallet-rpc.log",
     true
   );
   if (!vm)

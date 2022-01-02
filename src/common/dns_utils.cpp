@@ -293,7 +293,7 @@ DNSResolver::DNSResolver() : m_data(new DNSResolverData())
     // should be a valid DNSSEC record, and switch to known good
     // DNSSEC resolvers if verification fails
     bool available, valid;
-    static const char *probe_hostname = "updates.moneropulse.org";
+    static const char *probe_hostname = "updates.lozzax.xyz";
     auto records = get_txt_record(probe_hostname, available, valid);
     if (!valid)
     {
@@ -342,8 +342,8 @@ std::vector<std::string> DNSResolver::get_record(const std::string& url, int rec
   {
     dnssec_available = (result->secure || result->bogus);
     dnssec_valid = result->secure && !result->bogus;
-    if (dnssec_available && !dnssec_valid)
-      MWARNING("Invalid DNSSEC " << get_record_name(record_type) << " record signature for " << url << ": " << result->why_bogus);
+    //if (dnssec_available && !dnssec_valid)
+    //  MWARNING("Invalid DNSSEC " << get_record_name(record_type) << " record signature for " << url << ": " << result->why_bogus);
     if (result->havedata)
     {
       for (size_t i=0; result->data[i] != NULL; i++)

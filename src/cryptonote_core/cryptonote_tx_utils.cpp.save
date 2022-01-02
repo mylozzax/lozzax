@@ -25,55 +25,51 @@
 // INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// 
+// Parts of this file are originally copyright (c) 2012-2013 The Cryptonote developers
 
-#include "misc_log_ex.h"
+#include <unordered_set>
+#include <random>
+#include "include_base_utils.h"
+#include "string_tools.h"
+using namespace epee;
 
-#include "daemon/executor.h"
-
+#include "common/apply_permutation.h"
+#include "cryptonote_tx_utils.h"
 #include "cryptonote_config.h"
-#include "version.h"
+#include "blockchain.h"
+#include "cryptonote_basic/miner.h"
+#include "cryptonote_basic/tx_extra.h"
+#include "crypto/crypto.h"
+#include "crypto/hash.h"
+#include "ringct/rctSigs.h"
+#include "multisig/multisig.h"
 
-#include <string>
+using namespace crypto;
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon"
-
-namespace daemonize
+namespace cryptonote
 {
-  std::string const t_executor::NAME = "Lozzax Daemon";
-
-  void t_executor::init_options(
-      boost::program_options::options_description & configurable_options
-    )
+  //---------------------------------------------------------------
+  void classify_addresses(const std::vector<tx_destination_entry> &destinations, const boost::optional<cryptonote::account_public_address>& change_addr, size_t &num_stdaddresses, size_t &num_subaddresses, account_public_address &single_dest_subaddress)
   {
-    t_daemon::init_options(configurable_options);
-  }
-
-  std::string const & t_executor::name()
-  {
-    return NAME;
-  }
-
-  t_daemon t_executor::create_daemon(
-      boost::program_options::variables_map const & vm
-    )
-  {
-    LOG_PRINT_L0("Lozzax '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ") Daemonised");
-    return t_daemon{vm, public_rpc_port};
-  }
-
-  bool t_executor::run_non_interactive(
-      boost::program_options::variables_map const & vm
-    )
-  {
-    return t_daemon{vm, public_rpc_port}.run(false);
-  }
-
-  bool t_executor::run_interactive(
-      boost::program_options::variables_map const & vm
-    )
-  {
-    return t_daemon{vm, public_rpc_port}.run(true);
-  }
-}
-
+    num_stdaddresses = 0;
+    num_subaddresses = 0;
+    std::unordered_set<cryptonote::account_public_address> unique_dst_addresses;
+    for(const tx_destination_entry& dst_entr: destinations)
+    {
+      if (change_addr && dst_entr.addr == change_addr)
+        continue;
+      if (unique_dst_addresses.count(dst_entr.addr) == 0)
+      {
+        unique_dst_addresses.insert(dst_entr.addr);
+        if (dst_entr.is_subaddress)
+        {
+          ++num_subaddresses;
+          single_dest_subaddress = dst_entr.addr;
+        }
+        else
+        {
+          ++num_stdaddresses;
+        }
+      }
+    }

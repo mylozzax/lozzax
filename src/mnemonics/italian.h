@@ -1,4 +1,4 @@
-// Word list created by Monero contributor Shrikez
+// Word list created by Lozzax contributor Shrikez
 // 
 // Copyright (c) 2014-2020, The Monero Project
 // 

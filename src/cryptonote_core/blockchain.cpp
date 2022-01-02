@@ -1410,6 +1410,40 @@ bool Blockchain::validate_miner_transaction(const block& b, size_t cumulative_bl
     MERROR_VER("block weight " << cumulative_block_weight << " is bigger than allowed for this blockchain");
     return false;
   }
+
+  if (already_generated_coins != 0 && version >= 1)
+  {
+    uint64_t lozzax_reward = get_lozzax_reward(m_db->height(), base_reward);
+
+    if (b.miner_tx.vout.back().amount != lozzax_reward)
+    {
+      MERROR("Lozzax reward amount incorrect.  Should be: " << print_money(lozzax_reward) << ", is: " << print_money(b.miner_tx.vout.back().amount));
+      return false;
+    }
+
+    std::string lozzax_address_str;
+    switch (m_nettype)
+    {
+      case STAGENET:
+        lozzax_address_str = ::config::stagenet::LOZZAX_ADDRESS;
+        break;
+      case TESTNET:
+        lozzax_address_str = ::config::testnet::LOZZAX_ADDRESS;
+        break;
+      case MAINNET:
+        lozzax_address_str = ::config::LOZZAX_ADDRESS;
+        break;
+      default:
+        return false;
+    }
+
+    if (!validate_lozzax_reward_key(m_db->height(), lozzax_address_str, b.miner_tx.vout.size() - 1, boost::get<txout_to_key>(b.miner_tx.vout.back().target).key, m_nettype))
+    {
+      MERROR("Lozzax reward public key incorrect.");
+      return false;
+    }
+  }
+
   if(base_reward + fee < money_in_use)
   {
     MERROR_VER("coinbase transaction spend too much money (" << print_money(money_in_use) << "). Block reward is " << print_money(base_reward + fee) << "(" << print_money(base_reward) << "+" << print_money(fee) << "), cumulative_block_weight " << cumulative_block_weight);
@@ -3286,7 +3320,7 @@ bool Blockchain::check_tx_inputs(transaction& tx, tx_verification_context &tvc, 
     size_t n_unmixable = 0, n_mixable = 0;
     size_t min_actual_mixin = std::numeric_limits<size_t>::max();
     size_t max_actual_mixin = 0;
-    const size_t min_mixin = hf_version >= HF_VERSION_MIN_MIXIN_10 ? 10 : hf_version >= HF_VERSION_MIN_MIXIN_6 ? 6 : hf_version >= HF_VERSION_MIN_MIXIN_4 ? 4 : 2;
+    const size_t min_mixin = hf_version >= HF_VERSION_MIN_MIXIN_10 ? 10 : 2;
     for (const auto& txin : tx.vin)
     {
       // non txin_to_key inputs will be rejected below
@@ -4613,7 +4647,7 @@ void Blockchain::check_against_checkpoints(const checkpoints& points, bool enfor
       }
       else
       {
-        LOG_ERROR("WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option");
+        LOG_ERROR("WARNING: local blockchain failed to pass a LozzaxPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option");
       }
     }
   }
