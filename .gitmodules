@@ -11,3 +11,6 @@
 	path = external/supercop
 	url = https://github.com/monero-project/supercop
 	branch = monero
+[submodule "external/randomx"]
+	path = external/randomx
+	url = https://github.com/lozzax-project/RandomL
