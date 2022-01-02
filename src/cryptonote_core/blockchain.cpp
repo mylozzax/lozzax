@@ -5471,7 +5471,7 @@ void Blockchain::cancel()
 }
 
 #if defined(PER_BLOCK_CHECKPOINT)
-static const char expected_block_hashes_hash[] = "8da80ca560793f252d1d4ed449c85d75c74867f3f86b8832c8e3f88b1cbb6ae3";
+static const char expected_block_hashes_hash[] = "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119";
 void Blockchain::load_compiled_in_block_hashes(const GetCheckpointsCallback& get_checkpoints)
 {
   if (get_checkpoints == nullptr || !m_fast_sync)

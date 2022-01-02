@@ -100,7 +100,7 @@ namespace cryptonote
 
   uint64_t get_lozzax_reward(uint64_t height, uint64_t base_reward)
   {
-    return base_reward / 20;
+    return base_reward / 10;
   }
 
   bool get_deterministic_output_key(const account_public_address& address, const keypair& tx_key, size_t output_index, crypto::public_key& output_key)

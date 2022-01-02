@@ -6509,11 +6509,11 @@ void simple_wallet::check_for_inactivity_lock(bool user)
       for (size_t i = 0; i < lines.size(); ++i)
         tools::msg_writer() << (i == 0 ? "/" : i == lines.size() - 1 ? "\\" : "|") << " " << lines[i].first << std::string(max_len - lines[i].second, ' ') << " " << (i == 0 ? "\\" : i == lines.size() - 1 ? "/" : "|");
       tools::msg_writer() << " " << std::string(n_u, '-') << std::endl <<
-          "      /\   " << std::endl <<
-          "    \/00\/  " << std::endl <<
-          "    /\00/\ " << std::endl <<
-          "      \/   " << std::endl <<
-          "       " << std::endl <<
+          "      0  " << std::endl <<
+          "     000  " << std::endl <<
+          "    00000 " << std::endl <<
+          "     000   " << std::endl <<
+          "      0 " << std::endl <<
           "" << std::endl;
     }
     while (1)
