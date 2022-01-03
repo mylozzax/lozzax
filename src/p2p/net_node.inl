@@ -705,7 +705,7 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("41.71.229.87:11111");
+      full_addrs.insert("141.95.19.146:11111");
     }
     return full_addrs;
   }
@@ -836,7 +836,7 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
-     //  "xwvz3ekocr3dkyxfkmgm2hvbpzx2ysqmaxgter7znnqrhoicygkfswid.onion:18083",
+       "s6cdm26zj6zm4f44hnf55g4u2fsr2kccmbxp2p4pc5ao6zgazfkwtmyd.onion:11119",
      
         };
       }
@@ -845,8 +845,7 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
-    //      "s3l6ke4ed3df466khuebb4poienoingwof7oxtbo6j4n56sghe3a.b32.i2p:18080",
-    
+          "xwwk2kcbj3t3phzkyhaeqivrbdxnwp53nn2ss2ayebhbw7nmcioa.b32.i2p:11111"    
         };
       }
       return {};
