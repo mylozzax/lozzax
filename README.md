@@ -1,5 +1,6 @@
-# Monero
+# Lozzax
 
+Copyright (c) 2021-2022 The Lozzax Project.
 Copyright (c) 2014-2021 The Monero Project.   
 Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
@@ -18,7 +19,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
   - [Contributing](#contributing)
   - [Scheduled software upgrades](#scheduled-software-upgrades)
   - [Release staging schedule and protocol](#release-staging-schedule-and-protocol)
-  - [Compiling Monero from source](#compiling-monero-from-source)
+  - [Compiling Lozzax from source](#compiling-lozzax-from-source)
     - [Dependencies](#dependencies)
   - [Internationalization](#Internationalization)
   - [Using Tor](#using-tor)
@@ -28,33 +29,31 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Development resources
 
-- Web: [getmonero.org](https://getmonero.org)
-- Forum: [forum.getmonero.org](https://forum.getmonero.org)
-- Mail: [dev@getmonero.org](mailto:dev@getmonero.org)
-- GitHub: [https://github.com/monero-project/monero](https://github.com/monero-project/monero)
-- IRC: [#monero-dev on Libera](https://web.libera.chat/#monero-dev)
-- It is HIGHLY recommended that you join the #monero-dev IRC channel if you are developing software that uses Monero. Due to the nature of this open source software project, joining this channel and idling is the best way to stay updated on best practices and new developments in the Monero ecosystem. All you need to do is join the IRC channel and idle to stay updated with the latest in Monero development. If you do not, you risk wasting resources on developing integrations that are not compatible with the Monero network. The Monero core team and community continuously make efforts to communicate updates, developments, and documentation via other platforms – but for the best information, you need to talk to other Monero developers, and they are on IRC. #monero-dev is about Monero development, not getting help about using Monero, or help about development of other software, including yours, unless it also pertains to Monero code itself. For these cases, checkout #monero. 
+- Web: [docs.lozzax.xyz](https://docs.lozzax.xyz)
+- Forum: [https://discord.gg/BssSsnEnvs](https://discord.gg/BssSsnEnvs)
+- Mail: [dev@lozzax.xyz](mailto:dev@lozzax.xyz)
+- GitHub: [https://github.com/lozzax-project/lozzax](https://github.com/lozzax-project/lozzax)
 
 ## Vulnerability response
 
-- Our [Vulnerability Response Process](https://github.com/monero-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
-- We are also available via [HackerOne](https://hackerone.com/monero)
+- Our [Vulnerability Response Process](https://github.com/lozzax-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
+- We are also available via [HackerOne](https://hackerone.com/lozzax)
 
 ## Research
 
-The [Monero Research Lab](https://src.getmonero.org/resources/research-lab/) is an open forum where the community coordinates research into Monero cryptography, protocols, fungibility, analysis, and more. We welcome collaboration and contributions from outside researchers! Because not all Lab work and publications are distributed as traditional preprints or articles, they may be easy to miss if you are conducting literature reviews for your own Monero research. You are encouraged to get in touch with the Monero research community if you have questions, wish to collaborate, or would like guidance to help avoid unnecessarily duplicating earlier or known work.
+The [lozzax Research Lab](https://src.getmonero.org/resources/research-lab/) is an open forum where the community coordinates research into lozzax cryptography, protocols, fungibility, analysis, and more. We welcome collaboration and contributions from outside researchers! Because not all Lab work and publications are distributed as traditional preprints or articles, they may be easy to miss if you are conducting literature reviews for your own lozzax research. You are encouraged to get in touch with the lozzax research community if you have questions, wish to collaborate, or would like guidance to help avoid unnecessarily duplicating earlier or known work.
 
-The Monero research community is available on IRC in [#monero-research-lab on Libera](https://web.libera.chat/#monero-research-lab), which is also accessible via Matrix.
+The lozzax research community is available on IRC in [#lozzax-research-lab on Libera](https://web.libera.chat/#lozzax-research-lab), which is also accessible via Matrix.
 
 ## Announcements
 
-- You can subscribe to an [announcement listserv](https://lists.getmonero.org) to get critical announcements from the Monero core team. The announcement list can be very helpful for knowing when software updates are needed.
+- You can subscribe to an [announcement listserv](https://lists.getmonero.org) to get critical announcements from the lozzax core team. The announcement list can be very helpful for knowing when software updates are needed.
 
 ## Translations
-The CLI wallet is available in different languages. If you want to help translate it, see our self-hosted localization platform, Weblate, on [translate.getmonero.org]( https://translate.getmonero.org/projects/monero/cli-wallet/). Every translation *must* be uploaded on the platform, pull requests directly editing the code in this repository will be closed. If you need help with Weblate, you can find a guide with screenshots [here](https://github.com/monero-ecosystem/monero-translations/blob/master/weblate.md).
+The CLI wallet is available in different languages. If you want to help translate it, see our self-hosted localization platform, Weblate, on [translate.getmonero.org]( https://translate.getmonero.org/projects/monero/cli-wallet/). Every translation *must* be uploaded on the platform, pull requests directly editing the code in this repository will be closed. If you need help with Weblate, you can find a guide with screenshots [here](https://github.com/lozzax-ecosystem/lozzax-translations/blob/master/weblate.md).
 &nbsp;
 
-If you need help/support/info about translations, contact the localization workgroup. You can find the complete list of contacts on the repository of the workgroup: [monero-translations](https://github.com/monero-ecosystem/monero-translations#contacts).
+If you need help/support/info about translations, contact the localization workgroup. You can find the complete list of contacts on the repository of the workgroup: [lozzax-translations](https://github.com/lozzax-ecosystem/lozzax-translations#contacts).
 
 ## Coverage
 
@@ -67,33 +66,33 @@ If you need help/support/info about translations, contact the localization workg
 
 ## Introduction
 
-Monero is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+Lozzax is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
 
-**Privacy:** Monero uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain private by default.
+**Privacy:** lozzax uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain private by default.
 
 **Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25-word mnemonic seed that is only displayed once and can be written down to backup the wallet. Wallet files should be encrypted with a strong passphrase to ensure they are useless if ever stolen.
 
-**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Monero is able to ensure that transactions are not only untraceable but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
+**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, lozzax is able to ensure that transactions are not only untraceable but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
 
-**Decentralization:** The utility of Monero depends on its decentralised peer-to-peer consensus network - anyone should be able to run the monero software, validate the integrity of the blockchain, and participate in all aspects of the monero network using consumer-grade commodity hardware. Decentralization of the monero network is maintained by software development that minimizes the costs of running the monero software and inhibits the proliferation of specialized, non-commodity hardware.  
+**Decentralization:** The utility of lozzax depends on its decentralised peer-to-peer consensus network - anyone should be able to run the lozzax software, validate the integrity of the blockchain, and participate in all aspects of the lozzax network using consumer-grade commodity hardware. Decentralization of the lozzax network is maintained by software development that minimizes the costs of running the lozzax software and inhibits the proliferation of specialized, non-commodity hardware.  
 
 ## About this project
 
-This is the core implementation of Monero. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Monero that uses the protocol and network in a compatible manner.
+This is the core implementation of lozzax. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of lozzax that uses the protocol and network in a compatible manner.
 
 As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
 
-**Anyone is welcome to contribute to Monero's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase, it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
+**Anyone is welcome to contribute to lozzax's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase, it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
 
 ## Supporting the project
 
-Monero is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Monero and Bitcoin donations can be made to **donate.getmonero.org** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively, you can send XMR to the Monero donation address via the `donate` command (type `help` in the command-line wallet for details).
+lozzax is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both lozzax and Bitcoin donations can be made to **donate.getmonero.org** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively, you can send XMR to the lozzax donation address via the `donate` command (type `help` in the command-line wallet for details).
 
-The Monero donation address is: `888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkRxbANsAnjyPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`; base address for restoring with address and viewkey: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A`)
+The lozzax donation address is: `888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkRxbANsAnjyPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`; base address for restoring with address and viewkey: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A`)
 
 The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
 
-Core development funding and/or some supporting services are also graciously provided by [sponsors](https://www.getmonero.org/community/sponsorships/):
+Core development funding and/or some supporting services are also graciously provided by [sponsors](https://www.getlozzax.org/community/sponsorships/):
 
 [<img width="150" src="https://www.getmonero.org/img/sponsors/tarilabs.png"/>](https://tarilabs.com/)
 [<img width="150" src="https://www.getmonero.org/img/sponsors/globee.png"/>](https://globee.com/)
@@ -113,7 +112,7 @@ If you want to help out, see [CONTRIBUTING](docs/CONTRIBUTING.md) for a set of g
 
 ## Scheduled software upgrades
 
-Monero uses a fixed-schedule software upgrade (hard fork) mechanism to implement new features. This means that users of Monero (end users and service providers) should run current versions and upgrade their software on a regular schedule. Software upgrades occur during the months of April and October. The required software for these upgrades will be available prior to the scheduled date. Please check the repository prior to this date for the proper Monero software version. Below is the historical schedule and the projected schedule for the next upgrade.
+Monero uses a fixed-schedule software upgrade (hard fork) mechanism to implement new features. This means that users of lozzax (end users and service providers) should run current versions and upgrade their software on a regular schedule. Software upgrades occur during the months of April and October. The required software for these upgrades will be available prior to the scheduled date. Please check the repository prior to this date for the proper lozzax software version. Below is the historical schedule and the projected schedule for the next upgrade.
 Dates are provided in the format YYYY-MM-DD.
 
 
@@ -212,11 +211,11 @@ FreeBSD 12.1 one-liner required to build dependencies:
 
 Clone recursively to pull-in needed submodule(s):
 
-`$ git clone --recursive https://github.com/monero-project/monero`
+`$ git clone --recursive https://github.com/lozzax-project/lozzax`
 
 If you already have a repo cloned, initialize and update:
 
-`$ cd monero && git submodule init && git submodule update`
+`$ cd lozzax && git submodule init && git submodule update`
 
 *Note*: If there are submodule differences between branches, you may need 
 to use ```git submodule sync && git submodule update``` after changing branches
@@ -224,7 +223,7 @@ to build successfully.
 
 ### Build instructions
 
-Monero uses the CMake build system and a top-level [Makefile](Makefile) that
+Lozzax uses the CMake build system and a top-level [Makefile](Makefile) that
 invokes cmake commands as needed.
 
 #### On Linux and macOS
@@ -233,7 +232,7 @@ invokes cmake commands as needed.
 * Change to the root of the source code directory, change to the most recent release branch, and build:
 
     ```bash
-    cd monero
+    cd lozzax
     git checkout release-v0.17
     make
     ```
@@ -251,9 +250,9 @@ invokes cmake commands as needed.
 
 * The resulting executables can be found in `build/release/bin`
 
-* Add `PATH="$PATH:$HOME/monero/build/release/bin"` to `.profile`
+* Add `PATH="$PATH:$HOME/lozzax/build/release/bin"` to `.profile`
 
-* Run Monero with `lozzaxd --detach`
+* Run Lozzax with `lozzaxd --detach`
 
 * **Optional**: build and run the test suite to verify the binaries:
 
@@ -326,11 +325,11 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 
 * The resulting executables can be found in `build/release/bin`
 
-* Add `export PATH="$PATH:$HOME/monero/build/release/bin"` to `$HOME/.profile`
+* Add `export PATH="$PATH:$HOME/lozzax/build/release/bin"` to `$HOME/.profile`
 
 * Run `source $HOME/.profile`
 
-* Run Monero with `lozzaxd --detach`
+* Run Lozzax with `lozzaxd --detach`
 
 * You may wish to reduce the size of the swap file after the build has finished, and delete the boost directory from your home directory
 
@@ -348,7 +347,7 @@ If you are using the older Raspbian Jessie image, compiling Monero is a bit more
     ```
 
 
-* Then, install the dependencies for Monero except for `libunwind` and `libboost-all-dev`
+* Then, install the dependencies for lozzax except for `libunwind` and `libboost-all-dev`
 
 * Install the latest version of boost (this may first require invoking `apt-get remove --purge libboost*-dev` to remove a previous version if you're not using a clean install):
 
@@ -421,7 +420,7 @@ application.
 * To git clone, run:
 
     ```bash
-    git clone --recursive https://github.com/monero-project/monero.git
+    git clone --recursive https://github.com/lozzax-project/lozzax.git
     ```
 
 **Building**
@@ -432,7 +431,7 @@ application.
     cd monero
     ```
 
-* If you would like a specific [version/tag](https://github.com/monero-project/monero/tags), do a git checkout for that version. eg. 'v0.17.1.0'. If you don't care about the version and just want binaries from master, skip this step:
+* If you would like a specific [version/tag](https://github.com/lozzax-project/lozzax/tags), do a git checkout for that version. eg. 'v0.17.1.0'. If you don't care about the version and just want binaries from master, skip this step:
 
     ```bash
     git checkout v0.17.1.0
@@ -469,9 +468,9 @@ application.
 ### On FreeBSD:
 
 The project can be built from scratch by following instructions for Linux above(but use `gmake` instead of `make`). 
-If you are running Monero in a jail, you need to add `sysvsem="new"` to your jail configuration, otherwise lmdb will throw the error message: `Failed to open lmdb environment: Function not implemented`.
+If you are running lozzax in a jail, you need to add `sysvsem="new"` to your jail configuration, otherwise lmdb will throw the error message: `Failed to open lmdb environment: Function not implemented`.
 
-Monero is also available as a port or package as 'monero-cli`.
+lozzax is also available as a port or package as 'lozzax-cli`.
 
 ### On OpenBSD:
 
@@ -480,9 +479,9 @@ You will need to add a few packages to your system. `pkg_add cmake gmake zeromq 
 The `doxygen` and `graphviz` packages are optional and require the xbase set.
 Running the test suite also requires `py-requests` package.
 
-Build monero: `env DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/usr/local gmake release-static`
+Build lozzax: `env DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/usr/local gmake release-static`
 
-Note: you may encounter the following error when compiling the latest version of Monero as a normal user:
+Note: you may encounter the following error when compiling the latest version of lozzax as a normal user:
 
 ```
 LLVM ERROR: out of memory
@@ -497,7 +496,7 @@ Check that the dependencies are present: `pkg_info -c libexecinfo boost-headers 
 
 Third-party dependencies are usually under `/usr/pkg/`, but if you have a custom setup, adjust the "/usr/pkg" (below) accordingly.
 
-Clone the monero repository recursively and checkout the most recent release as described above. Then build monero: `gmake BOOST_ROOT=/usr/pkg LDFLAGS="-Wl,-R/usr/pkg/lib" release`.  The resulting executables can be found in `build/NetBSD/[Release version]/Release/bin/`.
+Clone the lozzax repository recursively and checkout the most recent release as described above. Then build lozzax: `gmake BOOST_ROOT=/usr/pkg LDFLAGS="-Wl,-R/usr/pkg/lib" release`.  The resulting executables can be found in `build/NetBSD/[Release version]/Release/bin/`.
 
 ### On Solaris:
 
@@ -551,11 +550,11 @@ You can also cross-compile static binaries on Linux for Windows and macOS with t
 
 The required packages are the names for each toolchain on apt. Depending on your distro, they may have different names.
 
-Using `depends` might also be easier to compile Monero on Windows than using MSYS. Activate Windows Subsystem for Linux (WSL) with a distro (for example Ubuntu), install the apt build-essentials and follow the `depends` steps as depicted above.
+Using `depends` might also be easier to compile lozzax on Windows than using MSYS. Activate Windows Subsystem for Linux (WSL) with a distro (for example Ubuntu), install the apt build-essentials and follow the `depends` steps as depicted above.
 
 The produced binaries still link libc dynamically. If the binary is compiled on a current distribution, it might not run on an older distribution with an older installation of libc. Passing `-DBACKCOMPAT=ON` to cmake will make sure that the binary will run on systems having at least libc version 2.17.
 
-## Installing Monero from a package
+## Installing lozzax from a package
 
 **DISCLAIMER: These packages are not part of this repository or maintained by this project's contributors, and as such, do not go through the same review process to ensure their trustworthiness and security.**
 
@@ -563,59 +562,59 @@ Packages are available for
 
 * Debian Buster
 
-    See the [instructions in the whonix/monero-gui repository](https://gitlab.com/whonix/monero-gui#how-to-install-monero-using-apt-get)
+    See the [instructions in the whonix/lozzax-gui repository](https://gitlab.com/whonix/lozzax-gui#how-to-install-lozzax-using-apt-get)
 
 * Debian Bullseye and Sid
 
     ```bash
-    sudo apt install monero
+    sudo apt install lozzax
     ```
-More info and versions in the [Debian package tracker](https://tracker.debian.org/pkg/monero).
+More info and versions in the [Debian package tracker](https://tracker.debian.org/pkg/lozzax).
 
 * Arch Linux (via Community packages):
-    [`monero`](https://www.archlinux.org/packages/community/x86_64/monero/)
+    [`lozzax`](https://www.archlinux.org/packages/community/x86_64/lozzax/)
 
 * Void Linux:
 
     ```bash
-    xbps-install -S monero
+    xbps-install -S lozzax
     ```
 
 * GuixSD
 
     ```bash
-    guix package -i monero
+    guix package -i lozzax
     ```
 
-* Gentoo [Monero overlay](https://github.com/gentoo-monero/gentoo-monero)
+* Gentoo [lozzax overlay](https://github.com/gentoo-lozzax/gentoo-lozzax)
 
     ```bash
     emerge --noreplace eselect-repository
-    eselect repository enable monero
-    emaint sync -r monero
-    echo '*/*::monero ~amd64' >> /etc/portage/package.accept_keywords
-    emerge net-p2p/monero
+    eselect repository enable lozzax
+    emaint sync -r lozzax
+    echo '*/*::lozzax ~amd64' >> /etc/portage/package.accept_keywords
+    emerge net-p2p/lozzax
     ```
 
 * macOS (homebrew)
     ```bash
-    brew install monero
+    brew install lozzax
     ```
 
 * Docker
 
     ```bash
     # Build using all available cores
-    docker build -t monero .
+    docker build -t lozzax .
 
     # or build using a specific number of cores (reduce RAM requirement)
-    docker build --build-arg NPROC=1 -t monero .
+    docker build --build-arg NPROC=1 -t lozzax .
 
     # either run in foreground
-    docker run -it -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 11111:11111 lozzax
+    docker run -it -v /lozzax/chain:/root/.bitlozzax -v /lozzax/wallet:/wallet -p 11111:11111 lozzax
 
     # or in background
-    docker run -it -d -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 11111:11111 lozzax
+    docker run -it -d -v /lozzax/chain:/root/.bitlozzax -v /lozzax/wallet:/wallet -p 11111:11111 lozzax
     ```
 
 * The build needs 3 GB space.
@@ -648,7 +647,7 @@ To run in background:
 To run as a systemd service, copy
 [lozzaxd.service](utils/systemd/lozzaxd.service) to `/etc/systemd/system/` and
 [lozzaxd.conf](utils/conf/lozzaxd.conf) to `/etc/`. The [example
-service](utils/systemd/lozzaxd.service) assumes that the user `monero` exists
+service](utils/systemd/lozzaxd.service) assumes that the user `lozzax` exists
 and its home is the data directory specified in the [example
 config](utils/conf/lozzaxd.conf).
 
@@ -667,7 +666,7 @@ See [README.i18n.md](docs/README.i18n.md).
 > used solely for relaying transactions received over local RPC. This provides
 > privacy and better protection against surrounding node (sybil) attacks.
 
-While Monero isn't made to integrate with Tor, it can be used wrapped with torsocks, by
+While lozzax isn't made to integrate with Tor, it can be used wrapped with torsocks, by
 setting the following configuration parameters and environment variables:
 
 * `--p2p-bind-ip 127.0.0.1` on the command line or `p2p-bind-ip=127.0.0.1` in
@@ -695,8 +694,8 @@ Example command line to start lozzaxd through Tor:
 DNS_PUBLIC=tcp torsocks lozzaxd --p2p-bind-ip 127.0.0.1 --no-igd
 ```
 
-A helper script is in contrib/tor/monero-over-tor.sh. It assumes Tor is installed
-already, and runs Tor and Monero with the right configuration.
+A helper script is in contrib/tor/lozzax-over-tor.sh. It assumes Tor is installed
+already, and runs Tor and lozzax with the right configuration.
 
 ### Using Tor on Tails
 
@@ -712,7 +711,7 @@ DNS_PUBLIC=tcp torsocks ./lozzaxd --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip
 
 ## Pruning
 
-As of May 2020, the full Monero blockchain file is about 100 GB. One can store a pruned blockchain, which is about 30 GB.
+As of May 2020, the full lozzax blockchain file is about 100 GB. One can store a pruned blockchain, which is about 30 GB.
 A pruned blockchain can only serve part of the historical chain data to other peers, but is otherwise identical in
 functionality to the full blockchain.
 To use a pruned blockchain, it is best to start the initial sync with `--prune-blockchain`. However, it is also possible
@@ -720,11 +719,11 @@ to prune an existing blockchain using the `lozzax-blockchain-prune` tool or usin
 with an existing chain. If an existing chain exists, pruning will temporarily require disk space to store both the full
 and pruned blockchains.
 
-For more detailed information see the ['Pruning' entry in the Moneropedia](https://www.getmonero.org/resources/moneropedia/pruning.html)
+For more detailed information see the ['Pruning' entry in the lozzaxpedia](https://www.getmonero.org/resources/moneropedia/pruning.html)
 
 ## Debugging
 
-This section contains general instructions for debugging failed installs or problems encountered with Monero. First, ensure you are running the latest version built from the Github repo.
+This section contains general instructions for debugging failed installs or problems encountered with lozzax. First, ensure you are running the latest version built from the Github repo.
 
 ### Obtaining stack traces and core dumps on Unix systems
 
@@ -766,7 +765,7 @@ Print the stack trace with `bt`
 coredumpctl -1 gdb
 ```
 
-#### To run Monero within gdb:
+#### To run lozzax within gdb:
 
 Type `gdb /path/to/lozzaxd`
 
@@ -780,13 +779,13 @@ There are two tools available:
 
 #### ASAN
 
-Configure Monero with the -D SANITIZE=ON cmake flag, eg:
+Configure lozzax with the -D SANITIZE=ON cmake flag, eg:
 
 ```bash
 cd build/debug && cmake -D SANITIZE=ON -D CMAKE_BUILD_TYPE=Debug ../..
 ```
 
-You can then run the monero tools normally. Performance will typically halve.
+You can then run the lozzax tools normally. Performance will typically halve.
 
 #### valgrind
 
@@ -799,7 +798,7 @@ Instructions for debugging suspected blockchain corruption as per @HYC
 There is an `mdb_stat` command in the LMDB source that can print statistics about the database but it's not routinely built. This can be built with the following command:
 
 ```bash
-cd ~/monero/external/db_drivers/liblmdb && make
+cd ~/lozzax/external/db_drivers/liblmdb && make
 ```
 
 The output of `mdb_stat -ea <path to blockchain dir>` will indicate inconsistencies in the blocks, block_heights and block_info table.
@@ -814,7 +813,7 @@ These records are dumped as hex data, where the first line is the key and the se
 
 ### Socket-based
 
-Because of the nature of the socket-based protocols that drive monero, certain protocol weaknesses are somewhat unavoidable at this time. While these weaknesses can theoretically be fully mitigated, the effort required (the means) may not justify the ends. As such, please consider taking the following precautions if you are a monero node operator:
+Because of the nature of the socket-based protocols that drive lozzax, certain protocol weaknesses are somewhat unavoidable at this time. While these weaknesses can theoretically be fully mitigated, the effort required (the means) may not justify the ends. As such, please consider taking the following precautions if you are a lozzax node operator:
 
 - Run `lozzaxd` on a "secured" machine. If operational security is not your forte, at a very minimum, have a dedicated a computer running `lozzaxd` and **do not** browse the web, use email clients, or use any other potentially harmful apps on your `lozzaxd` machine. **Do not click links or load URL/MUA content on the same machine**. Doing so may potentially exploit weaknesses in commands which accept "localhost" and "127.0.0.1".
 - If you plan on hosting a public "remote" node, start `lozzaxd` with `--restricted-rpc`. This is a must.
@@ -823,4 +822,4 @@ Because of the nature of the socket-based protocols that drive monero, certain p
 
 Certain blockchain "features" can be considered "bugs" if misused correctly. Consequently, please consider the following:
 
-- When receiving monero, be aware that it may be locked for an arbitrary time if the sender elected to, preventing you from spending that monero until the lock time expires. You may want to hold off acting upon such a transaction until the unlock time lapses. To get a sense of that time, you can consider the remaining blocktime until unlock as seen in the `show_transfers` command.
+- When receiving lozzax, be aware that it may be locked for an arbitrary time if the sender elected to, preventing you from spending that lozzax until the lock time expires. You may want to hold off acting upon such a transaction until the unlock time lapses. To get a sense of that time, you can consider the remaining blocktime until unlock as seen in the `show_transfers` command.
