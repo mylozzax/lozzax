@@ -192,21 +192,40 @@ namespace cryptonote
       ADD_CHECKPOINT2(0,       "76ee3cc98646292206cd3e86f74d88b4dcc1d937088645e9b0cbca84b7ce74eb", "0x1");
       return true;
     }
-      ADD_CHECKPOINT2(1,     "b56fa32afca50a9314d7fc95000dd1798559ab0afdfd598abd3005065af55a2b", "0x2");
-      ADD_CHECKPOINT2(17,    "c3cb6e8819a77f30da8c687c419a386a15587104b1f56a491feaf55f4879dfb7", "0xfd33");
-      ADD_CHECKPOINT2(25,    "156a542b2ffa98a5095167c8de20efa902fb299140e3ddf8992fa2bc5142eee0", "0x1652e");
-      ADD_CHECKPOINT2(38,    "f6132419b41a53801d6ade331e58a04b6ae5cf7167f9b51c370e836c79ce0f17", "0x1fe8a");
-      ADD_CHECKPOINT2(48,    "e841ca641c96936a5c543d241f6d6339fbf54688569f82c7a375ba07cfc37b73", "0x27732");
-      ADD_CHECKPOINT2(58,    "ab08eaabcd3ca8c5edb8be3a3fb186b743e9eb3381dfa630b8727fcb73bc8207", "0x2f1b1");
-      ADD_CHECKPOINT2(68,    "60da330a9b6ad839c5aed5b4b316a7245900160951c1392ccca22beab562f861", "0x372bc");
-      ADD_CHECKPOINT2(78,    "170e26668137037595f1757cc204bdc41639a76eefab38e32770a2a6de0e3fff", "0x3f076");
-      ADD_CHECKPOINT2(90,    "542d110a61b3f78c53a05129a0945ee727424e7c3d7f5dda0c0a52c52da0ffdb", "0x48857");
-      ADD_CHECKPOINT2(100,   "cacc31dfb441e2ea44e4175c522cd5048289594890f46f069b998a52473e2ff5", "0x5070d");
-      ADD_CHECKPOINT2(110,   "2b1db231dba71796f3238aae0b307567d23c0dd82c93db6af54050b185b6cf9b", "0x58372");
-      ADD_CHECKPOINT2(122,   "e91902d4a5fa684f79a5dcb0aec4129d3f6df53a52d33c09d896922df66027d3", "0x6163d");
-      ADD_CHECKPOINT2(131,   "9f567b89fee4fd8087bb4e0d966a504b2524a348ae2db93be25d3f2ef2ec77b6", "0x68294");
-      ADD_CHECKPOINT2(140,   "3bf802165b2e85928269eef17bd068be6851d410eecfc260c6c72d3bdb305e02", "0x6eba7");
-      ADD_CHECKPOINT2(230,   "a3f239558c4855ac9ba49a4050206f08715d096f81ad87a95ffb179e0054ea00", "0xba79d");
+      ADD_CHECKPOINT2(0,       "1323aa63f4789ae2c87a55020661c7224432f56a7ae74e8b20958bae95fcf7ee", "0x1");
+      ADD_CHECKPOINT2(500,     "ec0232324f503db6962a453eaa2eedd2084487a4c6db9aec90b3464229c20665", "0x1181d0");
+      ADD_CHECKPOINT2(1000,    "8234f234ba3a155176048e1cb0ec72c80148080e74fb5d45de9c7b730847a08d", "0x14bef2");
+      ADD_CHECKPOINT2(1500,    "e9435da0d22297ce35105cce7e7de62510ed8120567626ed619bcb02fabcdacd", "0x16ca9a");
+      ADD_CHECKPOINT2(2000,    "9090e5a4a06ddc3cbf6a624f75884ef532f00dddde18478c7ede057ec2dc7c0b", "0x1905dc");
+      ADD_CHECKPOINT2(2500,    "183e841f34d2fc60d29ee2e52dab6eb48e6234b0f1c349d61601ac429d8a40b7", "0x2a09890");
+      ADD_CHECKPOINT2(3000,    "1b45f342e44a9007c39396a0b8b2f57e5ae251f8e7f9c05f73e77a7ca9e204b6", "0x8b76080");
+      ADD_CHECKPOINT2(3500,    "7e5fc7016e721bef5e858ce111eacf006f4c16f0ae2bc2a95ec4c3021d6c139f", "0x1abdee75");
+      ADD_CHECKPOINT2(4000,    "43fadaf4975de4ea5437216eb76571956319baf491af6ec4cda106266065b748", "0x41be8f2b");
+      ADD_CHECKPOINT2(4500,    "1c53b5867f0f5032bed8b09313b5dc7bfa78aa14952fc5dd649975836abb1a9d", "0xcffbc43e");
+      ADD_CHECKPOINT2(5000,    "8707e5bdd5fcf79e3a7a0e1f86d6bd13d41633e8a5cb1d9152fd2ee1c09363d1", "0x23a784c00");
+      ADD_CHECKPOINT2(5500,    "9d0f8d423a0b465b59715405e46dbd1268afbe5e90820fa206edce02ce2c9533", "0x413058c16");
+      ADD_CHECKPOINT2(6000,    "e31a189978d53ffe8a09aaab20b1b4a8a2e3498efbcbd98268ef1e80a1344cc4", "0x6282f01bc");
+      ADD_CHECKPOINT2(6500,    "7cb5eddc9be4f5125535bb7d70aebd3a6641487b9c420802507a079322a34749", "0x96510a043");
+      ADD_CHECKPOINT2(7000,    "ba212ed7977793d01388685399d698d1b93c593429cb6fefc6c0138193ba8abf", "0xd3e166db4");
+      ADD_CHECKPOINT2(7500,    "5e308c3fd496ce497e147b0c3f099cf6584f77eeda73548b71d11b01eb5df87d", "0x113c2c6365");
+      ADD_CHECKPOINT2(8000,    "bce52d1f1cf57891d0d1cbe847d2cd5c85c24a32a85fcf9c5ab89869f670b33b", "0x14a84ec875");
+      ADD_CHECKPOINT2(8500,    "7fd7b2a5c86d0df0cccd9e8e101d5dcd78c87b3278d4094ff9bf374b63675689", "0x18485103b7");
+      ADD_CHECKPOINT2(9000,    "1fdc5df60d77b2d9ee4854381d3e4bdfea5f543c6b79240c87f5b3ee8e502994", "0x1befe8104c");
+      ADD_CHECKPOINT2(9500,    "5a834ae80fcc3982011ebe6ab68af56cb630781c6e5c785ef9f94c99a6cb7392", "0x1f90fa29b9");
+      ADD_CHECKPOINT2(10000,   "064b0631e66474f96d021cef287518b8302a6bdcb5d1027186c2844fd0ce2e84", "0x2338a1d5c1");
+      ADD_CHECKPOINT2(10500,   "95d6b7e13929271aa3972f81327d537a876f7ede306ca9be2c796713ea7ffb6f", "0x270ad09f09");
+      ADD_CHECKPOINT2(11000,   "4d3fe1456375a6eae6a549354dcc670af038718ec7332d61f87d305e0285f6ed", "0x2abae6e67b");
+      ADD_CHECKPOINT2(11500,   "fb2a625fd5b87273a9ec08efbc7d06d726c515a4beb5d04bf15115ea2907f5c1", "0x2d02a5c842");
+      ADD_CHECKPOINT2(12000,   "bfd0eb6b3c7d6e9b843ab257d6909c6bce75472068449b9ccb8a07e40e52aeab", "0x2e982f0774");
+      ADD_CHECKPOINT2(12500,   "8c75b60937976ec514137eda7bb3b63cbabbcb7e02c365c923840ec2f9f2090e", "0x307e8de8a7");
+      ADD_CHECKPOINT2(13000,   "9ad45619973fe23a7968f34372c61b6a1df2b670e0f5980902a4a8f682ffe730", "0x34530a120f");
+      ADD_CHECKPOINT2(13500,   "ec437b4ab27a0fcae2912c21596f9b1fbcb7eee3df2d74385c60f2b9b5e8693f", "0x3b795841ef");
+      ADD_CHECKPOINT2(14000,   "15e841d9b12acb0103d4a5f962706b89ffdbd4e4669f9f5be09edb55f00919d3", "0x450a52572d");
+      ADD_CHECKPOINT2(14500,   "93959a52284923c26578ed3ec7f7623dad9f3459d958ba7dfad01690cb7fb6e8", "0x53f5e65092");
+      ADD_CHECKPOINT2(15000,   "f0957fcfb3e7f452893272b043ee99cc68703c9aa97efdfb23acaa883d4c0b4f", "0x65ec423ad8");
+      ADD_CHECKPOINT2(15500,   "804a67b2cb7f86707347b28e3a487e14c14970c3e175d7e46f6933b3c9627725", "0x7c0be53dae");
+      ADD_CHECKPOINT2(16000,   "d4afd954e4445312ea64473ce2ce06444a3370624143e1d6129ca75216f23b8e", "0x97a9e3e315");
+      ADD_CHECKPOINT2(16500,   "650ccb665eec209a4b342d395c90637cca154f27b3699cafb39032fa3bbcf58a", "0xb7a6a197e1");
     return true;
   }
 
@@ -251,13 +270,16 @@ namespace cryptonote
     std::vector<std::string> records;
 
     // All four LozzaxPulse domains have DNSSEC on and valid
-    static const std::vector<std::string> dns_urls = { "checkpoints.lozzax.xyz"
+    static const std::vector<std::string> dns_urls = { "checkpoints.lozzax.xyz",
+						       "checkpoints.crypto-pool.xyz"
     };
 
-    static const std::vector<std::string> testnet_dns_urls = { "testpoints.lozzax.xyz"
+    static const std::vector<std::string> testnet_dns_urls = { "testpoints.lozzax.xyz",
+						               "testpoints.crypto-pool.xyz"
     };
 
-    static const std::vector<std::string> stagenet_dns_urls = { "stagenetpoints.lozzax.xyz"
+    static const std::vector<std::string> stagenet_dns_urls = { "stagenetpoints.lozzax.xyz",
+								"stagenetpoints.crypto-pool.xyz"
     };
 
     if (!tools::dns_utils::load_txt_records_from_dns(records, nettype == TESTNET ? testnet_dns_urls : nettype == STAGENET ? stagenet_dns_urls : dns_urls))
