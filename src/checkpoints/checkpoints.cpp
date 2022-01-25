@@ -268,18 +268,15 @@ namespace cryptonote
   bool checkpoints::load_checkpoints_from_dns(network_type nettype)
   {
     std::vector<std::string> records;
-
+     return false;
     // All four LozzaxPulse domains have DNSSEC on and valid
-    static const std::vector<std::string> dns_urls = { "checkpoints.lozzax.xyz",
-						       "checkpoints.crypto-pool.xyz"
+    static const std::vector<std::string> dns_urls = {
     };
 
-    static const std::vector<std::string> testnet_dns_urls = { "testpoints.lozzax.xyz",
-						               "testpoints.crypto-pool.xyz"
+    static const std::vector<std::string> testnet_dns_urls = {
     };
 
-    static const std::vector<std::string> stagenet_dns_urls = { "stagenetpoints.lozzax.xyz",
-								"stagenetpoints.crypto-pool.xyz"
+    static const std::vector<std::string> stagenet_dns_urls = {
     };
 
     if (!tools::dns_utils::load_txt_records_from_dns(records, nettype == TESTNET ? testnet_dns_urls : nettype == STAGENET ? stagenet_dns_urls : dns_urls))
@@ -312,7 +309,7 @@ namespace cryptonote
         ADD_CHECKPOINT(height, hashStr);
       }
     }
-    return true;
+    return false; //disable dnscheckpoints
   }
 
   bool checkpoints::load_new_checkpoints(const std::string &json_hashfile_fullpath, network_type nettype, bool dns)
