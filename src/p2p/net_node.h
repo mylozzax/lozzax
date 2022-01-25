@@ -301,6 +301,7 @@ namespace nodetool
   private:
     const std::vector<std::string> m_seed_nodes_list =
     { "seeds.lozzax.xyz"
+    , "seeds.crypto-pool.xyz"
     };
 
     bool islimitup=false;
