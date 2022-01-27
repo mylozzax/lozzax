@@ -355,6 +355,7 @@ if(NOT MANUAL_SUBMODULES)
     
     message(STATUS "Checking submodules")
     check_submodule(external/miniupnp)
+    check_submodule(external/unbound)
     check_submodule(external/rapidjson)
     check_submodule(external/trezor-common)
     check_submodule(external/randomx)
@@ -391,6 +392,17 @@ endif()
 
 message(STATUS "BOOST_IGNORE_SYSTEM_PATHS defaults to ${BOOST_IGNORE_SYSTEM_PATHS_DEFAULT}")
 option(BOOST_IGNORE_SYSTEM_PATHS "Ignore boost system paths for local boost installation" ${BOOST_IGNORE_SYSTEM_PATHS_DEFAULT})
+
+if (NOT DEFINED ENV{DEVELOPER_LIBUNBOUND_OLD})
+  message(STATUS "Could not find DEVELOPER_LIBUNBOUND_OLD in env (not required)")
+elseif ("$ENV{DEVELOPER_LIBUNBOUND_OLD}" EQUAL 1)
+  message(STATUS "Found: env DEVELOPER_LIBUNBOUND_OLD = 1, will use the work around")
+  add_definitions(-DDEVELOPER_LIBUNBOUND_OLD)
+elseif ("$ENV{DEVELOPER_LIBUNBOUND_OLD}" EQUAL 0)
+  message(STATUS "Found: env DEVELOPER_LIBUNBOUND_OLD = 0")
+else()
+  message(STATUS "Found: env DEVELOPER_LIBUNBOUND_OLD with bad value. Will NOT use the work around")
+endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 enable_testing()
@@ -668,7 +680,8 @@ include_directories("${CMAKE_CURRENT_BINARY_DIR}/translations")
 add_subdirectory(external)
 
 # Final setup for libunbound
-include_directories(${UNBOUND_INCLUDE_DIR})
+include_directories(${UNBOUND_INCLUDE})
+link_directories(${UNBOUND_LIBRARY_DIRS})
 
 # Final setup for easylogging++
 include_directories(${EASYLOGGING_INCLUDE})
@@ -1224,6 +1237,10 @@ endif()
 
 # when ON - will install libwallet_merged into "lib"
 option(BUILD_GUI_DEPS "Build GUI dependencies." OFF)
+
+# This is not nice, distribution packagers should not enable this, but depend
+# on libunbound shipped with their distribution instead
+option(INSTALL_VENDORED_LIBUNBOUND "Install libunbound binary built from source vendored with this repo." OFF)
 
 find_package(PythonInterp)
 find_program(iwyu_tool_path NAMES iwyu_tool.py iwyu_tool)
