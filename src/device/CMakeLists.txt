@@ -65,7 +65,7 @@ else ()
       device_io_hid.hpp
       )
   endif()
-
+endif()
 set(device_private_headers)
 
 
