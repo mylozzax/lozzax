@@ -125,7 +125,6 @@ namespace cryptonote
 
 namespace cryptonote
 {
-  //---------------------------------------------------------------
   void get_transaction_prefix_hash(const transaction_prefix& tx, crypto::hash& h, hw::device &hwdev)
   {
     hwdev.get_transaction_prefix_hash(tx,h);    
@@ -139,7 +138,7 @@ namespace cryptonote
     return h;
   }
   
-    //---------------------------------------------------------------  
+  //---------------------------------------------------------------  
   void get_transaction_prefix_hash(const transaction_prefix& tx, crypto::hash& h)
   {
     std::ostringstream s;
@@ -154,7 +153,6 @@ namespace cryptonote
     get_transaction_prefix_hash(tx, h);
     return h;
   }
-  //---
   
   bool expand_transaction_1(transaction &tx, bool base_only)
   {
